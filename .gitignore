@@ -1,0 +1,11 @@
+# OS cruft. This repo is markdown only - there is nothing to build and nothing to
+# ignore beyond the junk that operating systems drop into directories by themselves.
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor scratch
+*.swp
+*~
+.vscode/
+.idea/
