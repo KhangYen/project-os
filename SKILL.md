@@ -1,8 +1,10 @@
 ---
 name: project-os
 description: Use when the user invokes /project-os, wants to create a new self-improving project skill, says "scaffold a skill for X", "new project operating system", "make a skill like the passive-income one for X", or wants to turn any long-running goal (income stream, study plan, habit, business experiment) into a managed project with state files and session loops.
----
+metadata:
+  provenance: self-improving-skills
 
+---
 # Project OS - scaffold a self-improving project operating system
 
 ## Overview
@@ -36,6 +38,7 @@ Files are the memory (sessions are stateless). The loop reads state → proposes
 
 - **Problem-first (user doctrine, 2026-07-09):** if the project builds or sells anything, generate a PROBLEMS.md evidence backlog and the rule "no solution gets built unless it traces to an evidence-backed problem row (real threads/upvotes/own logged pain)". Find real problem → solve with AI → automate. Cleverness without evidence parks unbuilt.
 - Trust starts confirm-all. AUTO_PUBLISH (or domain equivalent) starts false.
+- **Every state field needs a step that writes it.** A field is not a mechanism; a field plus a trigger is. Before finishing, take each field the generated skill *reads* (trust level, clean-session counter, human-minutes, any budget or cap) and name the loop step that *updates* it. If you cannot name one, the field is decoration and the rule behind it is a wish - add the trigger or cut the field. This is not hypothetical: the trust counter shipped with a slot and no writer, so the ladder could never move off `confirm-all` and `auto-safe` was unreachable by construction. It read as complete because the field was *there*.
 - LEARN step is mandatory and non-negotiable in the generated loop - a session without a LEARNINGS entry is not finished (this rule died of neglect once; it stays explicit).
 - Kill criteria must be concrete (number + date), written at genesis while nobody is emotionally attached.
 - Evolve guardrails: locked decisions/kill criteria/trust rules untouchable, max 3 changes per pass, every change cites a logged learning, rollback notes always.

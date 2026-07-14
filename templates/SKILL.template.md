@@ -22,6 +22,12 @@ State files here: PLAN.md (strategy + kill criteria), GOALS.md (targets + review
 5. **Execute** CLAUDE actions. Never {{OUTWARD_VERBS}} - those stay HUMAN until {{AUTOPILOT_FLAG}} is explicitly flipped in PLAN.md.
 6. **Update PROGRESS.md**: dated entry - done, results, metrics, blockers, next actions.
 7. **LEARN (mandatory, before ending)**: append to LEARNINGS.md under today's date: (a) every user correction verbatim + the rule that would have prevented it; (b) one thing that worked; (c) one thing to do differently. A session that wrote nothing to LEARNINGS.md is not finished.{{IF_RESEARCH}} Research runs also log to RESEARCH-LOG.md.{{/IF_RESEARCH}}
+8. **Update the trust counter (same edit, non-optional).** The two lines at the top of PROGRESS.md are the entire record of trust, and **this step is the only thing that writes them.** Skip it and the ladder is decoration: the counter reads 0 forever, `auto-safe` is unreachable, and the project asks permission for everything until you stop using it.
+   - **If the user corrected you this session** → **drop `Trust level:` one rung** (`auto-full` → `auto-safe` → `confirm-all`; already at `confirm-all` → it stays) **and set `Clean sessions in a row: 0`.**
+     *What counts as a correction:* whatever you just wrote into LEARNINGS.md line (a). If you logged a correction there, it counts here. Not your opinion of whether it was fair, not whether you'd already spotted it - **the log decides, not you**, because the whole point is that the judge and the judged are the same agent.
+   - **If there were zero corrections** → **increment `Clean sessions in a row:` by 1.** When it reaches **4** and the level is `confirm-all`, promote to `auto-safe` and reset the counter to 0.
+   - **`auto-full` is never reached this way.** It requires an explicit grant from the user, in words. You may not infer one from a good streak.
+   - Trust is per-project. Never copy a level or a streak from another project, however well that one is going.
 
 ## Other Modes
 
@@ -36,11 +42,15 @@ EVOLVE may never change: locked decisions ({{LOCKED_DECISIONS}}), kill criteria,
 
 ## Trust Ladder
 
-`confirm-all` → `auto-safe` after 4 consecutive zero-correction sessions → `auto-full` only by explicit user grant. Any correction drops one level. Current level: top of PROGRESS.md.
+`confirm-all` → `auto-safe` after 4 consecutive zero-correction sessions → `auto-full` only by explicit user grant. Any correction drops one level.
+
+**Where it lives:** the two lines at the top of PROGRESS.md. **What moves it:** loop step 8, and nothing else. Read it at step 4, write it at step 8. If you are ever unsure what the current level is, the file is right and your memory is wrong.
 
 ## Red Flags
 
 - Session ends without PROGRESS.md + LEARNINGS.md entries → not finished; write them.
+- **Session ends without touching the trust counter (loop step 8) → not finished.** A counter that never moves means the ladder was never real. If it has read the same number for weeks while sessions have happened, that is the bug, not a coincidence.
+- **Logging a correction in LEARNINGS.md and then not dropping the trust level.** These are the same event written in two files; if they disagree, you are grading your own homework.
 - Proposing 5+ actions → too many for the budget.
 - Skipping a due retro because "things are going fine".
 - {{OUTWARD_VERBS}} without HUMAN sign-off while {{AUTOPILOT_FLAG}}=false.
