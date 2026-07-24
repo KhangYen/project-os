@@ -103,7 +103,7 @@ Everything above is the machinery, and machinery gets copied — that is fine, t
 
 What the templates can't give you is the part that hurts: **why** trust starts at confirm-all instead of somewhere useful, **what** actually belongs in a kill criterion versus what just sounds brave, and what a real evolve diff looks like when it's rolling back a change that quietly made things worse.
 
-I'm writing that down separately, with the receipts — every claim tied to a dated entry from a real project, failures included. It'll be linked here when it exists. *(Coming: the Project OS Playbook.)*
+I've written that down separately, with the receipts — every claim tied to a dated entry from a real project, failures included. **[The Project OS Playbook](https://khangster587.gumroad.com/l/cedpzo)** — $29, three chapters, nothing padded in to look bigger.
 
 If you only ever use the free files, that's a completely fine outcome. They're the good ones.
 
